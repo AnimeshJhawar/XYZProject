@@ -1,0 +1,17 @@
+{
+  "main": {
+    "name":"XYZ Project",
+    "description":"This Project is done because it was needed to be done. Change info in resumeData.json file",
+    "image":"profilepic.jpg",
+    "bio":"The aim of the project includes the overall purpose of the study or the project, it should be clear and to the point. In Aims, you talk about in the bullet points that what the project consists and what will be the outcomes in the study. This gives the main idea of the project.",
+    "contactmessage":"For contacting us",
+    "email": "myemail@gmail.com",
+    "phone": "9876543210",
+    "address":{
+      "street":"Hauz Khas",
+      "city":"New Delhi",
+      "state":"New Delhi",
+      "zip": "110001"
+    }
+  
+}}
