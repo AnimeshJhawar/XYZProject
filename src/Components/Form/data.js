@@ -7,7 +7,7 @@ export const schema = {
       },
       lockdown_periods: {
         type: 'integer',
-        maximum: 5,
+        enum: [0,1,2,3,4,5],
       },
       start_date: {
         type: 'string',
@@ -131,7 +131,7 @@ export const uischema = {
               "condition": {
                 "scope": "#/properties/lockdown_periods",
                 "schema": {
-                  enum: [2,,3,4,5]
+                  enum: [2,3,4,5]
                 }
               }
             }
