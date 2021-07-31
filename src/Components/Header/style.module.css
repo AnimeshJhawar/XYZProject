@@ -1,0 +1,19 @@
+.headerbar{
+    position: relative;
+}
+ 
+.navbar{
+    background-color: black;
+    opacity: 0.95;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    margin: 0px !important;
+}
+ 
+.navbar > *{
+    margin: 5px 20px;
+    cursor: pointer;
+}

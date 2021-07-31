@@ -1,55 +1,32 @@
-import React, { Component } from "react";
-import ReactGA from "react-ga";
-import $ from "jquery";
+import React from "react";
 import "./App.css";
-import Header from "./Components/Header";
-import Footer from "./Components/Footer";
-import About from "./Components/About";
-import Contact from "./Components/Contact";
-import Reports from "./Components/Reports";
+import { Header } from "./Components/Header/index";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+import { ParticleBg } from "./Components/ParticleBg";
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      foo: "bar",
-      resumeData: {}
-    };
 
-    ReactGA.initialize("UA-110570651-1");
-    ReactGA.pageview(window.location.pathname);
-  }
-
-  getResumeData() {
-    $.ajax({
-      url: "./resumeData.json",
-      dataType: "json",
-      cache: false,
-      success: function(data) {
-        this.setState({ resumeData: data });
-      }.bind(this),
-      error: function(xhr, status, err) {
-        console.log(err);
-        alert(err);
-      }
-    });
-  }
-
-  componentDidMount() {
-    this.getResumeData();
-  }
-
-  render() {
+export const App = () => {
+   
     return (
-      <div className="App">
-        <Header data={this.state.resumeData.main} />
-        <About data={this.state.resumeData.main} />
-        <Reports data={this.state.resumeData.main} />
-        <Contact data={this.state.resumeData.main} />
-        <Footer data={this.state.resumeData.main} />
-      </div>
+      <Router>
+        <div>
+          <Header />
+          <Switch  >
+            <Route path="/home" children={<ParticleBg />} />
+            
+          </Switch>
+          {/* <About />
+          <Reports  />
+          <Contact  />
+          <Footer  /> */}
+        </div>
+      </Router>
     );
-  }
+  
 }
 
 export default App;
