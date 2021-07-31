@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import { ParticleBg } from "./Components/ParticleBg";
 import { Form } from "./Components/Form";
+import { Home } from "./Components/Home";
 
 
 export const App = () => {
@@ -16,9 +17,8 @@ export const App = () => {
         <div>
           <Header />
           <Switch  >
-            <Route path="/home" children={<ParticleBg />} />
-            <Route path="/tool" children={<Form />} />
-
+            <Route path="/home" children={<ParticleBg children={<Home />} />} />
+            <Route path="/tool" children={<ParticleBg children={<Form />} />} />
           </Switch>
           {/* <About />
           <Reports  />

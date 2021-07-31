@@ -7,7 +7,7 @@ export const Header = () => {
    const history = useHistory();
    console.log(match)
     return (
-      <div className={styles.headerbar}>
+     
         <div className={styles.navbar}>
               <a  onClick={() => history.push("/home")} style={{fontWeight: match.pathname === "/home" ? "900" : "400" }}>
                 Home
@@ -25,7 +25,7 @@ export const Header = () => {
                 Contact
               </a>
         </div>
-      </div>
+    
     );
 
 }

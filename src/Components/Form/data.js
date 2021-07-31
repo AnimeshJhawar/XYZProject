@@ -1,33 +1,64 @@
 export const schema = {
     type: 'object',
     properties: {
-      name: {
+      username: {
         type: 'string',
         minLength: 1,
       },
-      description: {
-        type: 'string',
-      },
-      done: {
-        type: 'boolean',
-      },
-      due_date: {
-        type: 'string',
-        format: 'date',
-      },
-      rating: {
+      lockdown_periods: {
         type: 'integer',
         maximum: 5,
       },
-      recurrence: {
+      start_date: {
         type: 'string',
-        enum: ['Never', 'Daily', 'Weekly', 'Monthly'],
+        format: 'date',
       },
-      recurrence_interval: {
-        type: 'integer',
+      end_date: {
+        type: 'string',
+        format: 'date',
+      },
+      start_date1: {
+        type: 'string',
+        format: 'date',
+      },
+      end_date1: {
+        type: 'string',
+        format: 'date',
+      },
+      start_date2: {
+        type: 'string',
+        format: 'date',
+      },
+      end_date2: {
+        type: 'string',
+        format: 'date',
+      },
+      start_date3: {
+        type: 'string',
+        format: 'date',
+      },
+      end_date3: {
+        type: 'string',
+        format: 'date',
+      },
+      start_date4: {
+        type: 'string',
+        format: 'date',
+      },
+      end_date4: {
+        type: 'string',
+        format: 'date',
+      },
+      start_date5: {
+        type: 'string',
+        format: 'date',
+      },
+      end_date5: {
+        type: 'string',
+        format: 'date',
       },
     },
-    required: ['name', 'due_date'],
+    required: ['username', 'start_date', 'end_date'],
   };
 
 export const uischema = {
@@ -35,29 +66,25 @@ export const uischema = {
     "elements": [
       {
         "type": "Control",
-        "label": false,
-        "scope": "#/properties/done"
-      },
-      {
-        "type": "Control",
-        "scope": "#/properties/name"
+        "scope": "#/properties/username"
       },
       {
         "type": "HorizontalLayout",
         "elements": [
           {
             "type": "Control",
-            "scope": "#/properties/due_date"
+            "scope": "#/properties/start_date"
           },
           {
             "type": "Control",
-            "scope": "#/properties/rating"
-          }
+            "scope": "#/properties/end_date"
+          },
+         
         ]
       },
       {
         "type": "Control",
-        "scope": "#/properties/description",
+        "scope": "#/properties/lockdown_periods",
         "options": {
           "multi": true
         }
@@ -67,22 +94,155 @@ export const uischema = {
         "elements": [
           {
             "type": "Control",
-            "scope": "#/properties/recurrence"
+            "scope": "#/properties/start_date1",
+            "rule": {
+              "effect": "SHOW",
+              "condition": {
+                "scope": "#/properties/lockdown_periods",
+                "schema": {
+                  enum: [1,2,3,4,5]
+                }
+              }
+            }
           },
           {
             "type": "Control",
-            "scope": "#/properties/recurrence_interval",
+            "scope": "#/properties/end_date1",
             "rule": {
-              "effect": "HIDE",
+              "effect": "SHOW",
               "condition": {
-                "scope": "#/properties/recurrence",
+                "scope": "#/properties/lockdown_periods",
                 "schema": {
-                  "const": "Never"
+                  enum: [1,2,3,4,5]
                 }
               }
             }
           }
         ]
-      }
+      },
+      {
+        "type": "HorizontalLayout",
+        "elements": [
+          {
+            "type": "Control",
+            "scope": "#/properties/start_date2",
+            "rule": {
+              "effect": "SHOW",
+              "condition": {
+                "scope": "#/properties/lockdown_periods",
+                "schema": {
+                  enum: [2,,3,4,5]
+                }
+              }
+            }
+          },
+          {
+            "type": "Control",
+            "scope": "#/properties/end_date2",
+            "rule": {
+              "effect": "SHOW",
+              "condition": {
+                "scope": "#/properties/lockdown_periods",
+                "schema": {
+                  enum: [2,3,4,5]
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "type": "HorizontalLayout",
+        "elements": [
+          {
+            "type": "Control",
+            "scope": "#/properties/start_date3",
+            "rule": {
+              "effect": "SHOW",
+              "condition": {
+                "scope": "#/properties/lockdown_periods",
+                "schema": {
+                  enum: [3,4,5]
+                }
+              }
+            }
+          },
+          {
+            "type": "Control",
+            "scope": "#/properties/end_date3",
+            "rule": {
+              "effect": "SHOW",
+              "condition": {
+                "scope": "#/properties/lockdown_periods",
+                "schema": {
+                  enum: [3,4,5]
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "type": "HorizontalLayout",
+        "elements": [
+          {
+            "type": "Control",
+            "scope": "#/properties/start_date4",
+            "rule": {
+              "effect": "SHOW",
+              "condition": {
+                "scope": "#/properties/lockdown_periods",
+                "schema": {
+                  enum: [4,5]
+                }
+              }
+            }
+          },
+          {
+            "type": "Control",
+            "scope": "#/properties/end_date4",
+            "rule": {
+              "effect": "SHOW",
+              "condition": {
+                "scope": "#/properties/lockdown_periods",
+                "schema": {
+                  enum: [4,5]
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "type": "HorizontalLayout",
+        "elements": [
+          {
+            "type": "Control",
+            "scope": "#/properties/start_date5",
+            "rule": {
+              "effect": "SHOW",
+              "condition": {
+                "scope": "#/properties/lockdown_periods",
+                "schema": {
+                  enum: [5]
+                }
+              }
+            }
+          },
+          {
+            "type": "Control",
+            "scope": "#/properties/end_date5",
+            "rule": {
+              "effect": "SHOW",
+              "condition": {
+                "scope": "#/properties/lockdown_periods",
+                "schema": {
+                  enum: [5]
+                }
+              }
+            }
+          }
+        ]
+      },
     ]
   }

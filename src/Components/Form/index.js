@@ -6,6 +6,7 @@ import {
   } from '@jsonforms/material-renderers';
 import { schema, uischema } from "./data";
 import styles from "./style.module.css";
+import { Fade } from "react-reveal";
 
 export const Form = () => {
 
@@ -13,13 +14,15 @@ export const Form = () => {
 
     return (
       <div className={styles.container}>
-       <JsonForms  
-        schema={schema}
-        uischema={uischema}
-        data={data}
-        renderers={materialRenderers}
-        cells={materialCells}
-        onChange={({ data, _errors }) => setData(data)} />
+        <Fade>
+          <JsonForms  
+            schema={schema}
+            uischema={uischema}
+            data={data}
+            renderers={materialRenderers}
+            cells={materialCells}
+            onChange={({ data, _errors }) => setData(data)} />
+        </Fade>
       </div>
     );
 
