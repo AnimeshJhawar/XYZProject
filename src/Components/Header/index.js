@@ -12,6 +12,10 @@ export const Header = () => {
               <a  onClick={() => history.push("/home")} style={{fontWeight: match.pathname === "/home" ? "900" : "400" }}>
                 Home
               </a>
+
+              <a  onClick={() => history.push("/tool")} style={{fontWeight: match.pathname === "/tool" ? "900" : "400" }}>
+                Tool
+              </a>
             
               <a onClick={() => history.push("/about")} style={{fontWeight: match.pathname === "/about" ? "900" : "400" }}>
                 About

@@ -1,5 +1,4 @@
 import React from "react";
-import "./App.css";
 import { Header } from "./Components/Header/index";
 import {
   BrowserRouter as Router,
@@ -7,6 +6,7 @@ import {
   Route
 } from "react-router-dom";
 import { ParticleBg } from "./Components/ParticleBg";
+import { Form } from "./Components/Form";
 
 
 export const App = () => {
@@ -17,7 +17,8 @@ export const App = () => {
           <Header />
           <Switch  >
             <Route path="/home" children={<ParticleBg />} />
-            
+            <Route path="/tool" children={<Form />} />
+
           </Switch>
           {/* <About />
           <Reports  />
