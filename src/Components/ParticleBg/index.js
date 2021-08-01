@@ -10,7 +10,7 @@ export const ParticleBg = ({children}) => {
       <>
       <div className={styles.container}>
         <ParticlesBg type="circle" bg={true} />
-      
+          
           {children}
         
       </div>
