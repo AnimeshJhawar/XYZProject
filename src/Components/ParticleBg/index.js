@@ -4,17 +4,11 @@ import Fade from "react-reveal";
 import styles from "./style.module.css";
 import { Form } from "../Form";
 
-export const ParticleBg = ({children}) => {
-
-    return (
-      <>
-      <div className={styles.container}>
-        <ParticlesBg type="circle" bg={true} />
-          
-          {children}
-        
-      </div>
-      </>
-    );
-}
-
+export const ParticleBg = ({ children }) => {
+  return (
+    <div className={styles.container}>
+      <ParticlesBg type="circle" bg={true} />
+      <div className={styles.child}>{children}</div>
+    </div>
+  );
+};
