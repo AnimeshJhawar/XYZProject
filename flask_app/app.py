@@ -6,17 +6,18 @@ import sys
 app = Flask(__name__)
 app.debug = True
 
+
 @app.route('/admin')
 def admin():
     username = request.args.get('username')
     start = request.args.get('start')
-
     try:
         api_admin(username, start)
         return "Success"
     except:
         print(sys.exc_info())
         return "error"
+
 
 @app.route('/client')
 def client():
@@ -29,9 +30,7 @@ def client():
         return jsonify(sentiments)
     except:
         return "error: " + str(sys.exc_info())
-    
-     
-     
+
 
 if __name__ == '__main__':
     app.run()
